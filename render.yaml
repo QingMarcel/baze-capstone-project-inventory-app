@@ -17,7 +17,7 @@ services:
   rootDir: .
   dockerCommand: ./Dockerfile
   numInstances: 1
-  # healthCheckPath: /health/nestjs-docs
+
   envVars:
    - key: POSTGRES_USER
     fromDatabase:
