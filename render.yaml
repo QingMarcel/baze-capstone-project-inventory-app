@@ -10,7 +10,7 @@ services:
 - type: web
   name: inventory_app
   runtime: docker
-  repo: https://github.com/HCD-Community/ecotrack-be.git
+  repo: https://github.com/QingMarcel/baze-capstone-project-inventory-app.git
   region: oregon
   plan: free
   branch: dev
