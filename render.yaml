@@ -35,7 +35,7 @@ services:
     fromDatabase:
       name: stores_psg_db
       property: connectionString
-  - fromGroup: stores-app-secrets
+  - fromGroup: stores_psg_db
 
 databases:
 - name: stores_psg_db
