@@ -1,0 +1,60 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-10 col-12 mx-auto mt-5">
+    <div class="d-flex justify-content-end">
+      <a href="#" class="btn btn-primary btn-lg" style="border-radius: 50%; font-weight: bolder;" title="Add item(s)">+</a>
+    </div>
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Category</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if items|length == 0 %}
+          <tr>
+            <th scope="row">-</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+        {% endif %}
+        {% for item in items %}
+          <tr>
+            <th scope="row">{{ item.id }}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.category.name }}</td>
+            <td></td>
+            <td></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock content %}
+
+<!-- 
+1. cute
+2. slogan
+3. thrive
+4. mom
+5. nuclear
+6. conduct
+7. alarm
+8. dose
+9. under
+10. humble
+11. ice
+12. average
+-->
