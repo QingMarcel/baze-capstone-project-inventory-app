@@ -19,7 +19,7 @@ services:
   numInstances: 1
 
   envVars:
-   - key: POSTGRES_USER
+  - key: POSTGRES_USER
     fromDatabase:
       name: stores_psg_db
       property: user
