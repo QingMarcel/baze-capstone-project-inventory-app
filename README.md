@@ -1,0 +1,1 @@
+# baze-capstone-project-inventory-app
