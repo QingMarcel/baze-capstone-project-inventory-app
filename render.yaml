@@ -21,7 +21,7 @@ services:
   envVars:
   - key: POSTGRES_USER
     fromDatabase:
-      name: stores_psg_db
+      name: stores
       property: user
   - key: POSTGRES_PASSWORD
     fromDatabase:
