@@ -21,7 +21,7 @@ services:
   envVars:
   - key: POSTGRES_USER
     fromDatabase:
-      name: stores
+      name: inventory_app
       property: user
   - key: POSTGRES_PASSWORD
     fromDatabase:
