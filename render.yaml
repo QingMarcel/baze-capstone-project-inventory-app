@@ -37,10 +37,9 @@ services:
       property: connectionString
   - fromGroup: stores_psg_db
 
-databases:
-- name: inventory_app
-  region: oregon
-  plan: free
-  databaseName: inventory_app
-  user: qingmarcel
-  ipAllowList: []
+#databases:
+#- name: inventory_app
+ # region: oregon
+  # atabaseName: inventory_app
+  # user: qingmarcel
+  # ipAllowList: []
