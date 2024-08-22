@@ -1,0 +1,46 @@
+services:
+- type: redis
+  name: inventory_app
+  ipAllowList: [] # only allow internal connections
+  region: oregon
+  plan: free
+  maxmemoryPolicy: allkeys-lru # default value
+
+  # Dockerized web service
+- type: web
+  name: inventory_app
+  runtime: docker
+  repo: https://github.com/HCD-Community/ecotrack-be.git
+  region: oregon
+  plan: free
+  branch: dev
+  rootDir: .
+  dockerCommand: ./Dockerfile
+  numInstances: 1
+  # healthCheckPath: /health/nestjs-docs
+  envVars:
+   - key: POSTGRES_USER
+    fromDatabase:
+      name: stores_psg_db
+      property: user
+  - key: POSTGRES_PASSWORD
+    fromDatabase:
+      name: stores_psg_db
+      property: password
+  - key: POSTGRES_DB
+    fromDatabase:
+      name: stores_psg_db
+      property: database
+  - key: DATABASE_URL
+    fromDatabase:
+      name: stores_psg_db
+      property: connectionString
+  - fromGroup: stores-app-secrets
+
+databases:
+- name: stores_psg_db
+  region: oregon
+  plan: free
+  databaseName: inventory_app
+  user: qingmarcel
+  ipAllowList: []
